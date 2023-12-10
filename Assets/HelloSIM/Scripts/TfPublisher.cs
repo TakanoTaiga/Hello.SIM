@@ -10,13 +10,13 @@ public class TfPublisher : MonoBehaviour
     private ROS2UnityComponent ros2Unity;
     private ROS2Node ros2Node;
     private IPublisher<tf2_msgs.msg.TFMessage> tf_pub;
-    // Start is called before the first frame update
+
     void Start()
     {
         ros2Unity = GetComponent<ROS2UnityComponent>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (ros2Unity.Ok())
@@ -34,12 +34,12 @@ public class TfPublisher : MonoBehaviour
                 tf.Transforms[i] = new geometry_msgs.msg.TransformStamped();
                 tf.Transforms[i].Header.Frame_id = "map";
                 tf.Transforms[i].Child_frame_id = tf_gameobjects[i].name;
-                tf.Transforms[i].Transform = globalObjTramsformToROS2(tf_gameobjects[i]);
+                tf.Transforms[i].Transform = GlobalObjTramsformToROS2(tf_gameobjects[i]);
             }
             tf_pub.Publish(tf);
         }
     }
-    geometry_msgs.msg.Transform globalObjTramsformToROS2(GameObject obj)
+    geometry_msgs.msg.Transform GlobalObjTramsformToROS2(GameObject obj)
     {
         var transform_rt = new geometry_msgs.msg.Transform();
         transform_rt.Translation.X = (float)(obj.transform.position.x);

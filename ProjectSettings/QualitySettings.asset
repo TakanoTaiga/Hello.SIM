@@ -4,7 +4,7 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_CurrentQuality: 3
+  m_CurrentQuality: 4
   m_QualitySettings:
   - serializedVersion: 3
     name: Very Low
@@ -250,9 +250,7 @@ QualitySettings:
     terrainBillboardStart: 50
     terrainFadeLength: 5
     terrainMaxTrees: 50
-    excludedTargetPlatforms:
-    - Standalone
-    - Server
+    excludedTargetPlatforms: []
   - serializedVersion: 3
     name: Ultra
     pixelLightCount: 4
@@ -314,7 +312,7 @@ QualitySettings:
     PSP2: 2
     Server: 0
     Stadia: 5
-    Standalone: 2
+    Standalone: 3
     WebGL: 3
     Windows Store Apps: 5
     XboxOne: 5
